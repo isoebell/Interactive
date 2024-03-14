@@ -2,13 +2,34 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"  />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" style="background-color: blue;"  />
+
+<style>
+    div.alien_title{
+        position: -webkit-sticky;
+        position: sticky;
+        width: 100vw;
+        height: 5vh;
+        top: 0;
+        background-color: blue;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: xx-large;
+        font-weight: bold;
+        color: bisque;
+        margin-top: -5vh;
+    }
+</style>
 
 <style>
     *{margin: 0; padding: 0; border: 0; box-sizing: border-box; overflow: visible;
 
     cursor: circle;
 
+}
+.moving_banner{
+    width: 100vw;
+    height: 100vh;
+    background-image: url(video/code_background_gif_wip2.gif)
 }
 .header{
     width:100vw;
@@ -45,15 +66,7 @@
     padding: 0;
     background-color: chartreuse;
 }
-.alien_title{
-    width: 100vw;
-    height: 5vh;
-    background-color: blue;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: xx-large;
-    font-weight: bold;
-    color: bisque;
-}
+
 .column04{
     float: left;
     width: 33.33%;
@@ -85,18 +98,36 @@
     font-weight: bold;
     color: blue
 }
+.research_link{
+    width: 100vw;
+    height: 100vh;
+    padding: 10%;
+    background-color: gold;
+    float: inline-end;
+    float: left;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: xx-large;
+    font-weight: bold;
+    color: blue
+}
+.development_link{
+    width: 50%;
+    height: 33.33%;
+    padding-top: 25%%;
+}
 </style>
 
 <title>I'm learning</title>
 <link rel="shortcut icon" href="img/favicon_01.png" type="image/x-icon" >
 </head>
 <body>
-    <div class="moving banner">
+    <div class="moving_banner">
         <div class="header">
           <marquee behavior="moving" direction="right">* I eventually made this move * I eventually made this move * I eventually made this move * I eventually made this move * I eventually made this move * I eventually made this move *</marquee> 
         </div>
-        <img src="video/code_background_gif_wip2.gif" alt="code_background_gif_wip2" style="width: 100vw; height: 100vh;">
+       
       </div>
+
 <div class="flexbox_gestures">
     <div class="alien_title">
         <marquee behavior="moving" direction="right">Alien's have been studying humans, and this is what they've discovered</marquee>
@@ -113,5 +144,17 @@
         <img src="video/stairs.gif" alt="stairs" style="width: 80%;">
         Humans jump up and down to teleport when they're tired
     </div>
+
+<div class="research_link">
+   <div class="research_text">
+    <p>I've put my research, documentation, inspiration, codes and MORE down here.</p> 
+
+   <p>I would love to have a better grasp on aligning text.</p> 
+
+    <p>Press this and you'll make it to the research and development</p>
+    </div>
+    <div class="development_link"></div>
+    This is the spot, right here, click here >>>
+</div>
     </body>
 </html>
