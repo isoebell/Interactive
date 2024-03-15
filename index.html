@@ -26,6 +26,20 @@
     cursor: circle;
 
 }
+.warning{
+    width: 100vw;
+    height: 100vh;
+    background-color: gold;
+    color: blue;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: xx-large;
+    font-weight: bold;
+    text-align: center;
+}
+.warning_text{
+   position: relative;
+   padding: 20%;
+}
 .moving_banner{
     width: 100vw;
     height: 100vh;
@@ -113,7 +127,19 @@
 .development_link{
     width: 50%;
     height: 33.33%;
-    padding-top: 25%%;
+    padding-top: 10%;
+}
+.button{
+    width: 30vw;
+    height: 8vh;
+    border-radius: 50%;
+    margin: 3%;
+    margin-left: 60%;
+    background-color: blue;
+    color: bisque;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: x-large;
+    font-weight: bold;
 }
 </style>
 
@@ -121,11 +147,17 @@
 <link rel="shortcut icon" href="img/favicon_01.png" type="image/x-icon" >
 </head>
 <body>
+   
+
+    <div id="warningid" class="warning">
+        <div class="warning_text">For those who experience photosensitivity, the following site does contains bright, high-contrast, fast-moving images. Please do close the page if this poses any issues for you, otherwise click anywhere to enter.
+        </div>
+        <div onclick="document.getElementsByClassName('warning').style.display='block'"></div>
+</div>
     <div class="moving_banner">
         <div class="header">
           <marquee behavior="moving" direction="right">* I eventually made this move * I eventually made this move * I eventually made this move * I eventually made this move * I eventually made this move * I eventually made this move *</marquee> 
         </div>
-       
       </div>
 
 <div class="flexbox_gestures">
@@ -153,8 +185,10 @@
 
     <p>Press somewhere around here and you'll make it to the research and development section.</p>
     </div>
+    <a href="documentation.html">
+      <button class="button">me, click me</button>
+    </a>
     <div class="development_link"></div>
-    This is the spot, right here, click here >>>
-</div>
+    This is the spot, right here, click here >>> </div>
     </body>
 </html>
