@@ -7,6 +7,7 @@
 <style>
  *{margin: 0; padding: 0; border: 0; box-sizing: border-box; overflow: visible;}
 
+
     .the_journey{
         width:100vw;
     height:vh;
@@ -21,8 +22,8 @@
 
     .research{
         background-color: blue;
-        width: 200vw;
-        height: 90vh;
+        width: 150vw;
+        height: 100vh;
         overflow-x: scroll;
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         font-size: xx-large;
@@ -32,8 +33,8 @@
 
     .sketches{
         background-color: gold;
-        width: 200vw;
-        height: 90vh;
+        width: 150vw;
+        height: 110vh;
         overflow-x: scroll;
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         font-size: xx-large;
@@ -43,7 +44,7 @@
 
     .wips{
         background-color: blue;
-        width: 200vw;
+        width: 150vw;
         height: 90vh;
         overflow-x: scroll;
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -54,8 +55,8 @@
 
     .code{
         background-color: gold;
-        width: 200vw;
-        height: 90vh;
+        width: 150vw;
+        height: 110vh;
         overflow-x: scroll;
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         font-size: xx-large;
@@ -73,29 +74,83 @@
 
 }
 .research_header{
-   margin-top: 2%;
+   float: left;
+    margin-top: 2%;
     writing-mode: vertical-rl;
    text-orientation: upright;
    font-size: larger;
    letter-spacing: -8px;
 }
 .sketches_header{
+    float: left;
     writing-mode: vertical-rl;
    text-orientation: upright;
    font-size: larger;
    letter-spacing: -8px;
 }
 .wips_header{
+    float: left;
     writing-mode: vertical-lr;
     text-orientation: upright;
     font-size: larger;
     letter-spacing: -8px;
 }
 .code_header{
+    float: left;
     writing-mode: vertical-lr;
     text-orientation: upright;
     font-size: larger;
     letter-spacing: -8px;
+}
+
+.reference_img{
+    float: left;
+}
+.research_text{
+    float: left;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: xx-large;
+    font-weight: bold;
+    color: greenyellow;
+    width: 20%;
+    margin-left: 2%;
+    margin-top: 2%;
+}
+.sketches_img{
+    float: left;
+}
+.sketches_text{
+    float: left;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: xx-large;
+    font-weight: bold;
+    color: blue;
+    width: 20%;
+    margin-left: 2%;
+    margin-top: 2%;     
+}
+.wips_text{
+    float: left;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: xx-large;
+    font-weight: bold;
+    color: greenyellow;
+    width: 20%;
+    margin-left: 2%;
+    margin-top: 2%;     
+}
+.code_img{
+    width: 75%;
+}
+.code_text{
+    float: left;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: xx-large;
+    font-weight: bold;
+    color: blue;
+    width: 20%;
+    margin-left: 2%;
+    margin-top: 2%;
 }
 </style>
 
@@ -112,10 +167,17 @@
     <div class="research"> 
        
         <div class="research_header">Research</div>
+        <div class="research_text"><br><p> Jamie Zigelbaum's  Six-Forty by Four-Eighty (2010). </p>
+            <p>Spazio Lampo's website, for their creative co-working space in Italy. https://spaziolampo.ch/.  </p> 
+        <p>Benjamin Nespoulous' online folio.</p></div>
+            <div class="reference_img"><img src="img/huntgath/jamie_6040.png" alt="jamie_6040" style="width: 20%;margin: 1%;"><img src="img/huntgath/spazio_lampo_sml.jpg" alt="spazio" style="width: 30%; margin: 1%;"><img src="img/huntgath/benjamin_nes_sml.jpg" alt="benjamin_img" style="width: 30%;margin: 1%;"></div>
     </div>
 
     <div class="sketches">
         <div class="sketches_header">Sketches</div>
+        <div class="sketches_text"> <br><p>Some very rough sketches trying to understand divs, floats, and general web layout</p></div>
+   <br>
+        <div class="sketches_img"><img src="img/sketches/sketch_02.jpg" alt="sketch_02" style="width: 40%; margin: 2%;"> <img src="img/sketches/sketch_01.jpg" alt="sketch_01" style="width: 20%;"> <img src="img/sketches/sketch_03.jpg" alt="sketch_03" style="width: 20%; margin: 2%;"></div>
     </div>
 
     <div class="wips">
@@ -123,9 +185,13 @@
             <button class="button">want to go back? I can help, click me</button>
           </a></marquee>
         <div class="wips_header">Visual documentation</div>
+        <div class="wips_text"> This is where it gets ugly, and why I created a seperate page. Noone needs to 'land' here.</div>
+        <div class="wip_img"><img src="img/wips/wip01.jpg" alt="wip01" style="width: 15%; margin: 1%;"><img src="img/wips/wip02.jpg" alt="wip02" style="width: 15%; margin: 1%;"><img src="img/wips/wip04.jpg" alt="wip04" style="width: 15%; margin: 1%;"><img src="img/wips/wip05.jpg" alt="wip05" style="width: 15%; margin: 1%;"> <img src="img/wips/wip06.jpg" alt="wip06"style="width: 15%; margin: 1%;"> <img src="img/wips/wip07.jpg" alt="wip07" style="width: 15%; margin: 1%;"> <img src="img/wips/wip08.jpg" alt="wip08"style="width: 15%; margin: 1%;"><img src="img/wips/wip09.jpg" alt="wip09" style="width: 15%; margin: 1%;"></div>
     </div>
 
     <div class="code">
         <div class="code_header">Code documentation</div>
+        <div class="code_text"> And here we the learning of a new language, its a bit broken but it works.</div>
+    <div class="code_img"><img src="img/code/how_we_started.png" alt="how_we_started"><img src="img/code/code_dev.png" alt="code_dev"><img src="img/code/code_dev2.png" alt="code_dev2"><img src="img/code/code_dev3.png" alt=""></div>
     </div>
 </body>
