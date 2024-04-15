@@ -9,14 +9,26 @@ canvas {
   
 }
 
-.h1 {
-  font-size: 120px;
-  /*margin: 0;*/
-  /*padding: 0;*/
+h1 {
+  font-size: 7.5em;
+  margin: 0;
+  padding-top: 2%;
+  padding-bottom: 3%;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   color: blue;
   position: relative;
-  padding-left: 1%;
+  padding-left: 2%;
+  font-weight: normal;
+}
+
+.description{
+  font-size: 2em;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-weight: lighter;
+  color: blue;
+  padding-left: 2%;
+  padding-right: 4%;
+
 }
 .navigation {
  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -62,9 +74,13 @@ canvas {
 }
 
 
-.grid-item img{
-  max-width: 25vw;
+.grid-item img {
+  width: 25vw; /* Set the width to 25% of the viewport width */
+  height: calc(25vw / 1.6); /* Calculate the height based on the width and the desired ratio */
+  max-width: 100%; /* Ensure the image does not exceed its container */
+  max-height: 100%; /* Ensure the image does not exceed its container */
 }
+
 
 .tooltip{
   position: relative;
