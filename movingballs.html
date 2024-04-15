@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>moving balls</title>
+
+    <link rel="stylesheet" type="text/css" href="style2b.css">
+    <!--<link rel="preload" href="libraries/fonts/PPNEUEMONTREAL-MEDIUM.OTF" as="font" type="font/OTF" crossorigin=>-->
+
+    <link rel="shortcut icon" href="img/favicon_01.png" type="image/x-icon">
+
+    <!--<script src="libraries/p5.min.js"></script>
+    <script src="libraries/p5.sound.min.js"></s <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>cript> -->
+   
+   
+
+  </head>
+
+  <div class="navigation">
+    <div class="repeatgoback">
+      <a href="2b.html" target="_blank">go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back </a>
+    </div>
+
+  </div>
+  <body>
+    <div class="h1">    
+        <p>moving balls</p>
+    </div>
+
+    <div class="pagedescriptor"> 
+     <p>Here's the code if you want it, scroll down to have a play. </p>
+    </div>
+
+<div class="p5sketch">
+  <script src="movingballs.js" defer></script>
+</div>
+
+<div class="textcode">
+<textarea placeholder= "let circles = []; // Array to store circle objects
+
+function setup() {
+  createCanvas(windowWidth, windowHeight);
+  background(0);
+  
+  // Create five circles with different sizes and colors
+  let colors = ['red', 'blue', 'yellow', 'white', '#FFA500'];
+  for (let i = 0; i < 5; i++) {
+    let x = random(width);
+    let y = random(height);
+    let radius = random(20, 50);
+    let color = colors[i]; // Use specific color from the colors array
+    circles.push(new Circle(x, y, radius, color));
+  }
+}
+
+
+function draw() {
+  background(0);
+  
+  // Update and display each circle
+  for (let circle of circles) {
+    circle.update();
+    circle.display();
+  }
+}
+
+function mouseClicked() {
+  // Check if mouse is inside any circle
+  for (let circle of circles) {
+    if (circle.contains(mouseX, mouseY)) {
+      // If clicked, start moving the circle
+      circle.startMoving();
+    }
+  }
+}
+
+function randomColor() {
+  // Generate a random color
+  return color(random(255), random(255), random(255));
+}
+
+class Circle {
+  constructor(x, y, radius, color) {
+    this.x = x;
+    this.y = y;
+    this.radius = radius;
+    this.speedX = 0; // Speed in x-direction
+    this.speedY = 0; // Speed in y-direction
+    this.isMoving = false; // Flag to indicate if the circle is moving
+    this.color = color; // Color of the circle
+  }
+  
+  update() {
+    // Update circle position if it is moving
+    if (this.isMoving) {
+      this.x += this.speedX;
+      this.y += this.speedY;
+      
+      // Bounce off edges
+      if (this.x < 0 || this.x > width) {
+        this.speedX *= -1;
+      }
+      if (this.y < 0 || this.y > height) {
+        this.speedY *= -1;
+      }
+    }
+  }
+  
+  display() {
+    // Display the circle with its color
+    fill(this.color);
+    ellipse(this.x, this.y, this.radius * 2);
+  }
+  
+  contains(x, y) {
+    // Check if given point (x, y) is inside the circle
+    let d = dist(x, y, this.x, this.y);
+    return d < this.radius;
+  }
+  
+  startMoving() {
+    // Start moving the circle
+    this.speedX = random(-2, 2);
+    this.speedY = random(-2, 2);
+    this.isMoving = true;
+  }
+}
+"></textarea>
+</div>
+
+<!--<div class="grid-container2">
+    <div class="grid-item2"> -->
+<!--here is where you place the p5 sketch code-->
+    </div>
+
+    <div class="grid-item2">
+        <!--here is where you place the p5 sketch-->
+
+    </div>
+</div>
+    
+</body>

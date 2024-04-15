@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>posenet line tracking</title>
+
+    <link rel="stylesheet" type="text/css" href="style2b.css">
+    <!--<link rel="preload" href="libraries/fonts/PPNEUEMONTREAL-MEDIUM.OTF" as="font" type="font/OTF" crossorigin=>-->
+
+    <link rel="shortcut icon" href="img/favicon_01.png" type="image/x-icon">
+
+    <!--<script src="libraries/p5.min.js"></script>
+    <script src="libraries/p5.sound.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+   
+
+  </head>
+
+  <div class="navigation">
+    <div class="repeatgoback">
+      <a href="2b.html" target="_blank">go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back </a>
+    </div>
+
+  </div>
+  <body>
+    <div class="h1">    
+        <p>posenet line tracking</p>
+    </div>
+
+    <div class="pagedescriptor"> 
+     <p>Here's the code if you want it, scroll down to have a play. </p>
+    </div>
+
+<div class="p5sketch">
+  <script src="posenet_line_tracking.js" defer></script>
+</div>
+
+<div class="textcode">
+<textarea placeholder= "function setup() {
+  createCanvas(windowWidth, windowHeight);
+  video = createCapture(VIDEO)
+  video.size(width, height);
+  video.hide();
+  }
+  
+  function draw() {
+  background(0,0,255);
+  if (mouseIsPressed){
+  background (255, 255, 0);
+  }
+  video.loadPixels();
+  let stepSize = 4; // Adjust the step size to control the density
+  for (let y=0; y < video.height; y += stepSize){
+  for (let x = 0; x < video.width; x += stepSize) {
+  let index = (x + y * video.width) * 4;
+  let r = video.pixels[index];
+  let g = video.pixels[index+1];
+  let b = video.pixels[index+2];
+  let brightness = (r + g + b) / 3;
+  let threshold = 50; // adjust threshold control sensitivity
+  if (brightness < threshold) {
+  stroke (0);
+  strokeWeight(4);
+  line(x, y, x + stepSize, y + stepSize);
+  }
+  }
+  }
+  }"></textarea>
+</div>
+
+<!--<div class="grid-container2">
+    <div class="grid-item2"> -->
+<!--here is where you place the p5 sketch code-->
+    </div>
+
+    <div class="grid-item2">
+        <!--here is where you place the p5 sketch-->
+
+    </div>
+</div>
+    
+</body>
