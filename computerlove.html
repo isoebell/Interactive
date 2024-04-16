@@ -1,14 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>p5.js Sketch with Song</title>
-    <script src="libraries/p5.min.js"></script>
-    <script src="libraries/p5.sound.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
-    <script src="computerlove.js" defer></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>computer love draws</title>
+  <link rel="stylesheet" type="text/css" href="style2b.css">
+  <link rel="shortcut icon" href="img/favicon_01.png" type="image/x-icon">
+  <script src="libraries/p5.min.js"></script>
+  <script src="libraries/p5.sound.min.js"></script>
+  <script src="computerlove.js" defer></script>
 </head>
+
 <body>
+  <div class="navigation">
+    <div class="repeatgoback">
+      <a href="https://isoebell.github.io/Interactive/2b.html">go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back</a>
+    </div>
+  </div>
+  
+  <h1>computer love draws</h1>
+  
+  
+  
+  <div class="pagedescriptor"> 
+    <p>Here's the code if you want it, scroll down to have a play. The drawing is down below.</p>
+  </div>
+
+  <button id="playsong">listen to the drawing</button>
+  
+  <div class="p5sketch">
+    <script src="computerlove.js" defer></script>
+  </div>
+  
+  <div class="textcode">
+    <textarea placeholder=" let song; // Declare song variable
+    let fft; // Declare Fast Fourier Transform (FFT) variable
+   
+    function preload() {
+      // Load the song
+      song = loadSound('KraftwerkComputerLoveTrimmed.mp3', onSongLoaded, onSongLoadError);
+    }
+   
+    function onSongLoaded() {
+      console.log('Song loaded successfully!');
+    }
+   
+    function onSongLoadError() {
+      console.error('Error loading the song.');
+    }
+   
+    function setup() {
+      createCanvas(windowWidth, windowHeight);
+     
+      // Initialize the FFT object
+      fft = new p5.FFT();
+    }
+   
+    function draw() {
+      background(0,0,255);
+     
+      // Analyze the audio spectrum
+      let spectrum = fft.analyze();
+     
+      // Draw circles based on the spectrum
+      for (let i = 0; i < spectrum.length; i++) {
+        let amp = spectrum[i];
+        let r = map(amp, 0, 255, 10, 100); // Map amplitude to circle radius
+        let x = random(width); // Random x position within canvas width
+        let y = random(height); // Random y position within canvas height
+       
+        // Set circle color based on frequency
+        let freqColor = map(i, 0, spectrum.length, 0, 255);
+        fill(freqColor, 255, 0);
+       
+        // Draw circle
+        ellipse(x, y, r, r);
+      }
+    }"></textarea>
+  </div>
+
+  <audio src="KraftwerkComputerLove.mp3"></audio>
+
+  <script>
+    // Get the audio element
+    const audio = document.querySelector('audio');
+    // Get the playsong button
+    const playButton = document.getElementById('playsong');
+    
+    // Add event listener to the playsong button
+    playButton.addEventListener('click', function() {
+      // Check if the audio is paused
+      if (audio.paused) {
+        // If paused, play the audio
+        audio.play();
+        playButton.textContent = 'Pause'; // Change button text to "Pause"
+      } else {
+        // If playing, pause the audio
+        audio.pause();
+        playButton.textContent = 'Play'; // Change button text to "Play"
+      }
+    });
+  </script>
+
 </body>
 </html>
