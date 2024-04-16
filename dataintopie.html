@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>let's make pie</title>
+
+    <link rel="stylesheet" type="text/css" href="style2b.css">
+    <!--<link rel="preload" href="libraries/fonts/PPNEUEMONTREAL-MEDIUM.OTF" as="font" type="font/OTF" crossorigin=>-->
+
+    <link rel="shortcut icon" href="img/favicon_01.png" type="image/x-icon">
+
+    <script src="libraries/p5.min.js"></script>
+    <script src="libraries/p5.sound.min.js"></script>
+    <script src="libraries/p5.speech.js"></script>
+    <!--<script language="javascript" type="text/javascript" src="Speech.js"></script>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <!--<script src="libraries/p5.min.js"></script>
+    <script src="libraries/p5.sound.min.js"></s <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>cript> -->
+   
+   
+
+  </head>
+
+  <div class="navigation">
+    <div class="repeatgoback">
+      <a href="https://isoebell.github.io/Interactive/2b.html" >go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back </a>
+    </div>
+
+  </div>
+  <body>
+     
+    <h1>let's make pie</h1>
+
+    <div class="pagedescriptor"> 
+     <p>Here's the code if you want it, obviously this only works with the data I collected (from my laptop, phone, google drive and email storage used), but you could easily use this for any array of data. </p>
+    </div>
+
+
+<div class="textcode">
+<textarea placeholder= "var storageData = [121.56, 60.2, 13.4, 13.5];
+var colors = ['red', '#32CD32', 'blue', 'yellow'];
+var storageNames = ['A', 'B', 'C', 'D', 'E'];
+var total;
+
+function setup() {
+  createCanvas(windowWidth, windowHeight);
+  noLoop();
+  noStroke();
+}
+
+function draw() {
+  let lastPiece = 0;
+  total = getTotal();
+
+  for (let i = 0; i < storageData.length; i++) {
+    fill(colors[i]); // Use colors[i] to set fill color
+    let piece = map(storageData[i], 0, total, 0, TWO_PI);
+    arc(width / 2, height / 2, 300, 300, lastPiece, lastPiece + piece);
+    lastPiece += piece;
+  }
+}
+
+function getTotal() {
+  let total = 0;
+  for (let i = 0; i < storageData.length; i++) {
+    total += storageData[i];
+  }
+  return total;
+}"></textarea>
+</div>
+
+<div class="act-img">
+  <img src="img/pie.png" alt="pie">
+</div>
+
+<!--<div class="grid-container2">
+    <div class="grid-item2"> -->
+<!--here is where you place the p5 sketch code-->
+    </div>
+
+    <div class="grid-item2">
+        <!--here is where you place the p5 sketch-->
+
+    </div>
+</div>
+    
+</body>

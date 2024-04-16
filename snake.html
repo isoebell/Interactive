@@ -1,0 +1,217 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>a classic, snake game</title>
+
+    <link rel="stylesheet" type="text/css" href="style2b.css">
+    <!--<link rel="preload" href="libraries/fonts/PPNEUEMONTREAL-MEDIUM.OTF" as="font" type="font/OTF" crossorigin=>-->
+
+    <link rel="shortcut icon" href="img/favicon_01.png" type="image/x-icon">
+     <script language="javascript" type="text/javascript" src="libraries/p5.min.js"></script>
+  <script language="javascript" type="text/javascript" src="libraries/p5.speech.js"></script>
+  <script language="javascript" type="text/javascript" src="Speech.js"></script>
+
+    <!--<script src="libraries/p5.min.js"></script>
+    <script src="libraries/p5.sound.min.js"></s <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>cript> -->
+   
+   
+
+  </head>
+
+  <div class="navigation">
+    <div class="repeatgoback">
+      <a href="https://isoebell.github.io/Interactive/2b.html" >go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back go back </a>
+    </div>
+
+  </div>
+  <body>
+  
+    <h1>a classic, snake game</h1>
+
+    <div class="pagedescriptor"> 
+     <p>Here's the code if you want it, scroll down to have a play. <a href="https://p5js.org/examples/interaction-snake-game.html">p5.js.org</a> and ChatGPT walked me through this one.</p>
+    </div>
+
+    
+<div class="p5sketch">
+  <script src="snake.js" defer></script>
+</div>
+
+<div class="textcode">
+<textarea placeholder= "let snake;
+let food;
+let gridSize = 20;
+let cols, rows;
+let points = 0;
+let highScore = 0;
+let gameStarted = false;
+let gameOver = false;
+
+// Add an event listener for key presses
+document.addEventListener("keydown", function(event) {
+    // Check if the pressed key is an arrow key
+    if(['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].includes(event.key)) {
+        // Prevent the default behavior (scrolling)
+        event.preventDefault();
+    }
+});
+
+function setup() {
+  createCanvas(windowWidth, windowHeight);
+  cols = floor(width / gridSize);
+  rows = floor(height / gridSize);
+  frameRate(10);
+  snake = new Snake();
+  spawnFood();
+}
+
+function draw() {
+  background(0, 0, 255);
+  
+  if (gameStarted) {
+    if (!gameOver) {
+      snake.update();
+      snake.display();
+  
+      if (snake.eat(food)) {
+        points += 5;
+        spawnFood();
+        snake.grow();
+      }
+  
+      fill(255);
+      textSize(20);
+      textAlign(LEFT);
+      text("Points: " + points, 20, height - 20);
+      textAlign(RIGHT);
+      text("High Score: " + highScore, width - 20, height - 20);
+  
+      noStroke();
+      fill(255, 0, 0);
+      rect(food.x, food.y, gridSize, gridSize);
+    } else {
+      fill(255);
+      textSize(32);
+      textAlign(CENTER, CENTER);
+      text("Game Over :( Press any key to play again", width / 2, height / 2);
+    }
+  } else {
+    fill(255);
+    textSize(32);
+    textAlign(CENTER, CENTER);
+    text("Press any key to start", width / 2, height / 2);
+  }
+}
+
+function keyPressed() {
+  gameStarted = true;
+  if (!gameOver) {
+    if (keyCode === UP_ARROW && snake.yspeed !== 1) {
+      snake.dir(0, -1);
+    } else if (keyCode === DOWN_ARROW && snake.yspeed !== -1) {
+      snake.dir(0, 1);
+    } else if (keyCode === LEFT_ARROW && snake.xspeed !== 1) {
+      snake.dir(-1, 0);
+    } else if (keyCode === RIGHT_ARROW && snake.xspeed !== -1) {
+      snake.dir(1, 0);
+    }
+  } else {
+    points = 0;
+    snake.reset();
+    gameOver = false;
+  }
+}
+
+function spawnFood() {
+  let col = floor(random(cols));
+  let row = floor(random(rows));
+  food = createVector(col * gridSize, row * gridSize);
+}
+
+class Snake {
+  constructor() {
+    this.body = [];
+    this.body[0] = createVector(floor(cols / 2) * gridSize, floor(rows / 2) * gridSize);
+    this.xspeed = 1;
+    this.yspeed = 0;
+  }
+  
+  update() {
+    let head = this.body[this.body.length - 1].copy();
+    this.body.shift();
+    head.x += this.xspeed * gridSize;
+    head.y += this.yspeed * gridSize;
+    this.body.push(head);
+    
+    if (this.collide()) {
+      if (points > highScore) {
+        highScore = points;
+      }
+      gameOver = true;
+    }
+  }
+  
+  display() {
+    fill(255, 255, 0);
+    for (let i = 0; i < this.body.length; i++) {
+      rect(this.body[i].x, this.body[i].y, gridSize, gridSize);
+    }
+  }
+  
+  dir(x, y) {
+    this.xspeed = x;
+    this.yspeed = y;
+  }
+  
+  eat(pos) {
+    let head = this.body[this.body.length - 1];
+    if (head.x === pos.x && head.y === pos.y) {
+      return true;
+    }
+    return false;
+  }
+  
+  collide() {
+    let head = this.body[this.body.length - 1];
+    for (let i = 0; i < this.body.length - 1; i++) {
+      if (head.x === this.body[i].x && head.y === this.body[i].y) {
+        return true;
+      }
+    }
+    if (head.x >= width || head.x < 0 || head.y >= height || head.y < 0) {
+      return true;
+    }
+    return false;
+  }
+  
+  reset() {
+    this.body = [];
+    this.body[0] = createVector(floor(cols / 2) * gridSize, floor(rows / 2) * gridSize);
+    this.xspeed = 1;
+    this.yspeed = 0;
+  }
+  
+  grow() {
+    let tail = this.body[this.body.length - 1].copy();
+    this.body.push(tail);
+  }
+}"></textarea>
+</div>
+
+<!--<div class="grid-container2">
+    <div class="grid-item2"> -->
+<!--here is where you place the p5 sketch code-->
+    </div>
+
+    <div class="grid-item2">
+        <!--here is where you place the p5 sketch-->
+
+    </div>
+</div>
+    
+</body>
