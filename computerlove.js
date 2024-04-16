@@ -15,14 +15,14 @@ function onSongLoadError() {
 }
 
 function setup() {
-  createCanvas(800, 600);
+  createCanvas(windowWidth, windowHeight);
   
   // Initialize the FFT object
   fft = new p5.FFT();
 }
 
 function draw() {
-  background(30);
+  background(0,0,255);
   
   // Analyze the audio spectrum
   let spectrum = fft.analyze();
@@ -36,7 +36,7 @@ function draw() {
     
     // Set circle color based on frequency
     let freqColor = map(i, 0, spectrum.length, 0, 255);
-    fill(freqColor, 100, 255);
+    fill(freqColor, 255, 0);
     
     // Draw circle
     ellipse(x, y, r, r);
