@@ -3,8 +3,9 @@
 html, body {
   margin: 0;
   padding: 0;
-  background-color: blue;
   cursor: url('img/red-mouse.png'), auto;
+  background-color: blue;
+  
 }
 
 canvas {
