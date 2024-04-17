@@ -75,6 +75,13 @@ font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     height: 100vh;
     background-image: url(video/code_background_gif_wip2.gif)
 }
+@media (prefers-reduced-motion) {
+    .moving_banner {
+        background-image: url(img/code_background_wip2.jpg);
+    }
+}
+
+
 .header{
     width:100vw;
     height:vh;
@@ -180,15 +187,15 @@ font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 <body>
 
     <div id="warningid" class="warning modal" onclick="warning()">
-        <div class="warning_text">For those who experience photosensitivity, the following site does contain bright, high-contrast, fast-moving images. We are working on integrating individual preferences regarding reduced-motion and contrast into our website. Until then, please take care of yourself and close this page if this poses any issues for you. Otherwise, click anywhere to enter.
+        <div class="warning_text">For those who experience photosensitivity, the following site does contain bright, high-contrast, fast-moving images. Preferences for reduced-motion have been taken into account, however, please do take care of yourself if this may pose issues. Otherwise, click anywhere to enter.
         </div>
 </div>
 
-<div id="acknowledgementid" class="acknowledgement_modal" onclick="acknowledgement()">
+<!--<div id="acknowledgementid" class="acknowledgement_modal" onclick="acknowledgement()">
     <div class="acknowledgement_text"> 
         <br><p>I respectfully acknowledge the Boonwurrung, Woi Wurrung and Wurundjeri peoples of the Kulin Nation, their ancestors, and Elders, as the traditional custodians of the unceded lands on which I am able to live and create on, additionally the place that this site has been published.</p> <br>
     </div>
-</div>
+</div>-->
 
     <div class="moving_banner">
         <div class="header">
