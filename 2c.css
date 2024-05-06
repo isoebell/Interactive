@@ -1,0 +1,201 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    cursor: url('img/red-mouse.png'), auto;
+  }
+  
+  canvas {
+    display: block;
+    
+  }
+  
+  h1 {
+    font-size: 7.5em;
+    margin: 0;
+    padding-top: 2%;
+    padding-bottom: 3%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: blue;
+    position: relative;
+    padding-left: 2%;
+    font-weight: normal;
+  }
+  
+  h2{
+    font-size: 6em;
+    margin: 0;
+    padding-top: 2%;
+    padding-bottom: 3%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: blue;
+    position: relative;
+    padding-left: 5%;
+    font-weight: normal;
+  }
+  
+  .description{
+    font-size: 2em;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: lighter;
+    color: blue;
+    padding-left: 2%;
+    padding-right: 4%;
+  
+  }
+  .navigation {
+   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+   background-color: blue; /*background color of box*/
+   /*padding: 5px 10px; /*padding inside the box*/
+   /*margin-left: 10px; /*spacing between boxes*/
+   opacity: 100;
+   /*border-radius: 15px; /*rounded corners of the box*/
+   width: 100vw;
+   height: 6.5vh;
+   text-align: justify;
+  }
+  
+  .navigation a{
+    color: white; /*text color of the box*/
+    text-decoration: none; /*removes underline from text*/
+    margin-top: 1%;
+    font-size: 1.2em;
+  }
+  
+  
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1%;
+    padding: 1%;
+    padding-bottom: 5%;
+    width: 100vw;
+    max-width: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden; /* Prevent vertical scrolling */
+    box-sizing: border-box;
+    margin: 0 auto;
+    margin-left: 1vw;
+  }
+  
+  .grid-item {
+    border: none;
+    text-align: left;
+    position: relative;
+    /* Remove fixed height to allow items to adjust based on content */
+    /* height: auto; */
+  }
+  
+  
+  
+  .grid-item img {
+    width: 25vw; /* Set the width to 25% of the viewport width */
+    height: calc(25vw / 1.6); /* Calculate the height based on the width and the desired ratio */
+    max-width: 100%; /* Ensure the image does not exceed its container */
+    max-height: 100%; /* Ensure the image does not exceed its container */
+  }
+  
+  
+  .tooltip{
+    position: relative;
+    display: inline-block;
+  }
+  
+  
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: max-content; /* Adjusted width to cover the entire image */
+    background-color: black;
+    color: #fff;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: lighter;
+    font-size: smaller;
+    text-align: center;
+    border-radius: 3%;
+    padding: 1% 2%;
+    position: absolute;
+    z-index: 1;
+    top: 40%; /* Positioned from top */
+    left: 50%; /* Positioned from left */
+    transform: translate(-50%, -50%); /* Centering trick */
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  
+  .tooltip:hover .tooltiptext{
+    visibility: visible;
+    opacity: 1;
+  }
+  /*create cursor for hover cursor*/
+  
+  .caption {
+    font-size: 16px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: lighter;
+    color: blue;
+    margin-top: 10px;
+    position: relative;
+    width: 100%;
+  }
+  
+  .pagedescriptor{
+    font-size: 2em;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: lighter;
+    color: blue;
+    padding-left: 5%;
+    padding-right: 3%;
+    padding-bottom: 3%;
+  }
+
+  .pagedescriptor img{
+    width: 100vw;
+    max-width: 100%;
+  }
+
+  .pagedescriptor a{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: lighter;
+    color: blue;
+  }
+  
+  .p5sketch{
+    display: block;
+    unicode-bidi: isolate;
+  }
+  
+  .textcode{
+    display: block;
+    unicode-bidi: isolate;
+  }
+  
+  textarea {
+    width: 100%;
+    /*left: 5vh;*/
+    height: 80vh; /* 80% of the viewport height */
+    /*padding: 10px;*/
+    font-size: 18px;
+    border: 2px solid #ffffff;
+    border-radius: 5px;
+    padding-left: 100px;
+    padding-top: 3%;
+  }
+  
+  #playsong {
+    background-color: rgb(0, 0, 255); /* Blue background color */
+    color: white; /* White text color */
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1em; /* Set the font size */
+    font-weight: lighter; /* Set the font weight */
+    padding: 1%px 5%; /* Add padding to the button */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Add border radius for rounded corners */
+    position: absolute; /* Position the button absolutely */
+    left: 8%; /* Position the button to the left */
+    
+  }
+  
+  .act-img img{
+    width: 100vw;
+    max-width: 100%;
+  }
